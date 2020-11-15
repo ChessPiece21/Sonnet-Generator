@@ -1,2 +1,4 @@
 # SonnetGenerator
 A sonnet generator, created as extra credit for my poetry class.
+Credit to Amaranth Borsuk, my prof, for inspiring me to do this for "more than a 4.0," and the data poetry work of Nick Montfort and 
+Lillian Yvonne-Bertram for being actual inspirations for combining my English majoring with coding skills.
