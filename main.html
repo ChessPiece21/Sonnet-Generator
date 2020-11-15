@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+        <meta name="og:title" content="Sonnet Generator">
+        <meta name="og:author" content="Joe Lollo">
+        <meta property="og:description"
+        content="A simple combinatorial generator of monometer sonnets.
+                 Feel free to copy and modify it." />
+  <!--
+  Sonnet Generator
+  copyright (c) 2020 Joe Lollo
+
+  Copying and distribution of this file, with or without modification, are
+  permitted in any medium without royalty provided the copyright notice and
+  this notice are preserved. This file is offered as-is, without any warranty.
+
+  Thank you to Amaranth Borsuk and Nick Montfort for inspiring me, I guess.
+  -->
+
+  <style>
+  body {
+   background: #444444;
+   color:#FFFFFF;
+   margin:32pt;
+   font-family:"Arial", "Arial", Arial, serif;
+   font-size:16pt;
+  }
+  a {
+   color: #618ddd;
+   text-decoration:none;
+  }
+  </style>
+
+  <script>
+  var lines = [], options =
+`Aligned,:Confined,:Lead line,:Land mine,:Outline,:Outshined,:Divine,:Peace of mind,:Naptime,:Bedtime,:Daytime,:Pastime,:Peace-time,:Spacetime,:Sands of time,:Sense of rhyme,:Sense of time,
+buried,:harried,:carried,:married,:varied,:weary,:merry,
+slated.:stated.:berated.:hated.:created.:hatred.:awaited.:activated.:automated.:captivated.:compensated.:compicated.:confiscated.:validated.:illustrated.:liberated.:vacted.:updated.:belated.
+You are mine?:Are you mine?:You are mine.
+Possession:Obsession:Lesson:Recession:Transgression:Suppression:Expression:Confession:Question:Session:Cession:Impression:Regression
+`.split('\n');
+  for (var line of options) {
+    lines.push(line.split(':'));
+  }
+
+  function pick(array) {
+      return array[Math.floor(Math.random() * array.length)];
+  }
+
+  function generate() {
+  	var sonnet = "";
+  	for (line of lines) {
+      sonnet += pick(line) + "<br>";
+    }
+  	poem.innerHTML = sonnet;
+  }
+  </script>
+  <title>Sonnet Generator</title>
+</head>
+
+<body onload="generate();">
+<div id="main" style="padding-top:18px">
+  <h1 style="margin-bottom:0;padding-bottom:0">Sonnet Generator</h1>
+  <h4 style="margin-top:0"><a href="https://nickm.com">Based on the work of Nick Montfort</a> &nbsp; November 14, 2020 &nbsp; by Joe Lollo</h4>
+    <div id="poem"><i>You need a recent browser to view this!</i></div>
+    <div style="font-size:12pt;margin-top:20pt"> <a href="javascript:location.reload()" style="background:#222;padding:3pt;font-weight:bold">Next…</a></div>
+</div>
+</body>
+</html>
